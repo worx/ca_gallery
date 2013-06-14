@@ -864,7 +864,7 @@ function ca_gallery_default_page_manager_pages() {
     ),
   );
   $display->cache = array();
-  $display->title = 'Gallery';
+  $display->title = '';
   $display->content = array();
   $display->panels = array();
     $pane = new stdClass();
