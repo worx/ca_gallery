@@ -332,6 +332,13 @@ function ca_gallery_views_default_views() {
   $handler->display->display_options['pager']['options']['id'] = '0';
   $handler->display->display_options['style_plugin'] = 'grid';
   $handler->display->display_options['row_plugin'] = 'fields';
+  /* No results behavior: Global: Text area */
+  $handler->display->display_options['empty']['area']['id'] = 'area';
+  $handler->display->display_options['empty']['area']['table'] = 'views';
+  $handler->display->display_options['empty']['area']['field'] = 'area';
+  $handler->display->display_options['empty']['area']['empty'] = TRUE;
+  $handler->display->display_options['empty']['area']['content'] = 'Coming soon.';
+  $handler->display->display_options['empty']['area']['format'] = 'filtered_html';
   /* Field: Content: Image */
   $handler->display->display_options['fields']['field_gallery_image_g_image']['id'] = 'field_gallery_image_g_image';
   $handler->display->display_options['fields']['field_gallery_image_g_image']['table'] = 'field_data_field_gallery_image_g_image';
@@ -424,6 +431,13 @@ function ca_gallery_views_default_views() {
   $handler->display->display_options['pager']['options']['id'] = '0';
   $handler->display->display_options['style_plugin'] = 'grid';
   $handler->display->display_options['row_plugin'] = 'fields';
+  /* No results behavior: Global: Text area */
+  $handler->display->display_options['empty']['area']['id'] = 'area';
+  $handler->display->display_options['empty']['area']['table'] = 'views';
+  $handler->display->display_options['empty']['area']['field'] = 'area';
+  $handler->display->display_options['empty']['area']['empty'] = TRUE;
+  $handler->display->display_options['empty']['area']['content'] = 'Coming soon.';
+  $handler->display->display_options['empty']['area']['format'] = 'filtered_html';
   /* Field: Content: Gallery Image */
   $handler->display->display_options['fields']['field_ca_gallery_gallery_image']['id'] = 'field_ca_gallery_gallery_image';
   $handler->display->display_options['fields']['field_ca_gallery_gallery_image']['table'] = 'field_data_field_ca_gallery_gallery_image';
@@ -488,6 +502,7 @@ function ca_gallery_views_default_views() {
   $handler->display->display_options['pager']['options']['items_per_page'] = '4';
   $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['pager']['options']['id'] = '0';
+  $handler->display->display_options['defaults']['empty'] = FALSE;
   $handler->display->display_options['defaults']['arguments'] = FALSE;
   /* Contextual filter: Content: Parent Gallery (field_ca_gallery_parent_gallery) */
   $handler->display->display_options['arguments']['field_ca_gallery_parent_gallery_target_id']['id'] = 'field_ca_gallery_parent_gallery_target_id';
