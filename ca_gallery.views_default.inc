@@ -640,6 +640,7 @@ function ca_gallery_views_default_views() {
   $handler->display->display_options['pane_title'] = 'CA Gallery Sort: Parent Gallery Sort';
   $handler->display->display_options['pane_category']['name'] = 'CA Sort';
   $handler->display->display_options['pane_category']['weight'] = '0';
+  $handler->display->display_options['inherit_panels_path'] = '1';
 
   /* Display: CA Gallery Sort: Sub-Gallery Sort */
   $handler = $view->new_display('panel_pane', 'CA Gallery Sort: Sub-Gallery Sort', 'ca_gallery_sort_sub_gallery_sort');
@@ -657,6 +658,7 @@ function ca_gallery_views_default_views() {
   $handler->display->display_options['pane_title'] = 'CA Gallery Sort: Sub-Gallery Sort';
   $handler->display->display_options['pane_category']['name'] = 'CA Sort';
   $handler->display->display_options['pane_category']['weight'] = '0';
+  $handler->display->display_options['inherit_panels_path'] = '1';
 
   /* Display: CA Gallery Sort: Image sort */
   $handler = $view->new_display('panel_pane', 'CA Gallery Sort: Image sort', 'ca_gallery_sort_image_sort');
@@ -690,6 +692,7 @@ function ca_gallery_views_default_views() {
   $handler->display->display_options['pane_title'] = 'CA Gallery Sort: Image Sort';
   $handler->display->display_options['pane_category']['name'] = 'CA Sort';
   $handler->display->display_options['pane_category']['weight'] = '0';
+  $handler->display->display_options['inherit_panels_path'] = '1';
   $export['ca_gallery_sort'] = $view;
 
   return $export;
