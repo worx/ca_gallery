@@ -59,7 +59,10 @@ function ca_gallery_views_pre_view(&$view, &$display_id, &$args) {
   if ($display_id == 'ca_gallery_list_1') {
     $view->set_items_per_page(variable_get('ca_gallery_list_count', 16));
   }
-  elseif ($display_id == 'ca_gallery_image_list_1') {
+  if ($display_id == 'ca_gallery_sub_list_1') {
+    $view->set_items_per_page(variable_get('ca_gallery_sublist_count', 4));
+  }
+  if ($display_id == 'ca_gallery_image_list_1') {
     $view->set_items_per_page(variable_get('ca_gallery_image_list_count', 16));
   }
 }

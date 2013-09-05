@@ -36,14 +36,21 @@ function ca_gallery_settings_form() {
     '#title' => t('Number of galleries to display'),
     '#default_value' => variable_get('ca_gallery_list_count', 16),
     '#required' => TRUE,
-    '#description' => t('How many blogs would you like displayed per page?'),
+    '#description' => t('How many galleries would you like displayed per page? Suggested in groups for 4.'),
+  );
+    $form['ca_gallery_sublist_count'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Number of sub galleries to display'),
+    '#default_value' => variable_get('ca_gallery_sublist_count', 4),
+    '#required' => TRUE,
+    '#description' => t('How many sub galleries would you like displayed per page? Suggested in groups for 4.'),
   );
   $form['ca_gallery_image_list_count'] = array(
     '#type' => 'textfield',
     '#title' => t('Number of images to display'),
     '#default_value' => variable_get('ca_gallery_image_list_count', 16),
     '#required' => TRUE,
-    '#description' => t('How many blogs would you like displayed in the block?'),
+    '#description' => t('How many gallery images would you like displayed per page? Suggested in groups for 4.'),
   );
   
   return system_settings_form($form);
