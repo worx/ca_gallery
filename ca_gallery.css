@@ -1,12 +1,12 @@
-.view-ca-gallery tr, .view-ca-gallery tr.even, .view-ca-gallery-image tr, .view-ca-gallery-image tr.even  {
-  background: none repeat scroll 0 0 transparent;
+.ca-gallery-list tr, .ca-gallery-list tr.even, .node-type-ca-gallery tr, .node-type-ca-gallery tr.even  {
+  background: none !important;
 }
 
-.view-ca-gallery tr td, .view-ca-gallery-image tr td {
+.ca-gallery-list tr td, .node-type-ca-gallery tr td {
   padding: 0;
   width: 25%;
 }
 
-.view-ca-gallery tr td, .view-ca-gallery tr th, .view-ca-gallery-image tr td,  .view-ca-gallery-image tr th {
+.ca-gallery-list tr td, .ca-gallery-list tr th, .node-type-ca-gallery tr td,  .node-type-ca-gallery tr th {
   text-align: center;
 }
