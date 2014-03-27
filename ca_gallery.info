@@ -14,6 +14,7 @@ dependencies[] = panels
 dependencies[] = pathauto
 dependencies[] = role_export
 dependencies[] = strongarm
+dependencies[] = views
 dependencies[] = views_bulk_operations
 dependencies[] = views_content
 dependencies[] = views_ui
