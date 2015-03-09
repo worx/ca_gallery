@@ -19,7 +19,7 @@ function ca_gallery_default_page_manager_handlers() {
   $handler->handler = 'panel_context';
   $handler->weight = 0;
   $handler->conf = array(
-    'title' => 'CA Gallery: Gallery Image View',
+    'title' => 'CA Gallery: Gallery Grid Image View',
     'no_blocks' => 0,
     'pipeline' => 'standard',
     'css_id' => '',
@@ -36,6 +36,13 @@ function ca_gallery_default_page_manager_handlers() {
             ),
           ),
           'context' => 'argument_entity_id:node_1',
+          'not' => FALSE,
+        ),
+        1 => array(
+          'name' => 'ca_gallery_list_template',
+          'settings' => array(
+            'ca_gallery_list_template' => 'ca_gallery_list_template_one',
+          ),
           'not' => FALSE,
         ),
       ),
@@ -100,6 +107,104 @@ function ca_gallery_default_page_manager_handlers() {
   $display->title_pane = '0';
   $handler->conf['display'] = $display;
   $export['ca_gallery_node_view_panel_context'] = $handler;
+
+  $handler = new stdClass();
+  $handler->disabled = FALSE; /* Edit this to true to make a default handler disabled initially */
+  $handler->api_version = 1;
+  $handler->name = 'ca_gallery_node_view_panel_context_2';
+  $handler->task = 'node_view';
+  $handler->subtask = '';
+  $handler->handler = 'panel_context';
+  $handler->weight = 2;
+  $handler->conf = array(
+    'title' => 'CA Gallery: Gallery Flex Image View',
+    'no_blocks' => 0,
+    'pipeline' => 'standard',
+    'css_id' => '',
+    'css' => '',
+    'contexts' => array(),
+    'relationships' => array(),
+    'access' => array(
+      'plugins' => array(
+        0 => array(
+          'name' => 'node_type',
+          'settings' => array(
+            'type' => array(
+              'ca_gallery' => 'ca_gallery',
+            ),
+          ),
+          'context' => 'argument_entity_id:node_1',
+          'not' => FALSE,
+        ),
+        1 => array(
+          'name' => 'ca_gallery_list_template',
+          'settings' => array(
+            'ca_gallery_list_template' => 'ca_gallery_list_template_one_flex',
+          ),
+          'not' => FALSE,
+        ),
+      ),
+      'logic' => 'and',
+    ),
+    'body_classes_to_remove' => '',
+    'body_classes_to_add' => 'ca-gallery-node ca-gallery-node-template-1',
+  );
+  $display = new panels_display();
+  $display->layout = 'onecol';
+  $display->layout_settings = array();
+  $display->panel_settings = array(
+    'style_settings' => array(
+      'default' => NULL,
+      'middle' => NULL,
+    ),
+  );
+  $display->cache = array();
+  $display->title = '%node:title';
+  $display->uuid = 'b79b5e0b-473e-4112-a881-49ce57af4cec';
+  $display->content = array();
+  $display->panels = array();
+    $pane = new stdClass();
+    $pane->pid = 'new-ebfb6f00-0f69-4893-aeb2-ce260bb16cb2';
+    $pane->panel = 'middle';
+    $pane->type = 'views_panes';
+    $pane->subtype = 'ca_gallery_list-ca_gallery_flex_1';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array();
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $pane->uuid = 'ebfb6f00-0f69-4893-aeb2-ce260bb16cb2';
+    $display->content['new-ebfb6f00-0f69-4893-aeb2-ce260bb16cb2'] = $pane;
+    $display->panels['middle'][0] = 'new-ebfb6f00-0f69-4893-aeb2-ce260bb16cb2';
+    $pane = new stdClass();
+    $pane->pid = 'new-06cbd0e2-1b19-4f31-adf3-e129b2048b93';
+    $pane->panel = 'middle';
+    $pane->type = 'views_panes';
+    $pane->subtype = 'ca_gallery_image_list-ca_gallery_image_flex_1';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array();
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 1;
+    $pane->locks = array();
+    $pane->uuid = '06cbd0e2-1b19-4f31-adf3-e129b2048b93';
+    $display->content['new-06cbd0e2-1b19-4f31-adf3-e129b2048b93'] = $pane;
+    $display->panels['middle'][1] = 'new-06cbd0e2-1b19-4f31-adf3-e129b2048b93';
+  $display->hide_title = PANELS_TITLE_FIXED;
+  $display->title_pane = '0';
+  $handler->conf['display'] = $display;
+  $export['ca_gallery_node_view_panel_context_2'] = $handler;
 
   return $export;
 }
@@ -869,7 +974,7 @@ function ca_gallery_default_page_manager_pages() {
   $handler->handler = 'panel_context';
   $handler->weight = 0;
   $handler->conf = array(
-    'title' => 'CA Gallery: List View',
+    'title' => 'CA Gallery: Grid View',
     'no_blocks' => 0,
     'pipeline' => 'standard',
     'css_id' => '',
@@ -878,6 +983,17 @@ function ca_gallery_default_page_manager_pages() {
     'relationships' => array(),
     'body_classes_to_remove' => '',
     'body_classes_to_add' => 'ca-gallery-list ca-gallery-list-template-1',
+    'access' => array(
+      'plugins' => array(
+        0 => array(
+          'name' => 'ca_gallery_list_template',
+          'settings' => array(
+            'ca_gallery_list_template' => 'ca_gallery_list_template_one',
+          ),
+          'not' => FALSE,
+        ),
+      ),
+    ),
   );
   $display = new panels_display();
   $display->layout = 'onecol';
@@ -912,6 +1028,74 @@ function ca_gallery_default_page_manager_pages() {
     $pane->uuid = '8f23e62a-b94a-4f7e-9bd7-2abf44c1ae25';
     $display->content['new-8f23e62a-b94a-4f7e-9bd7-2abf44c1ae25'] = $pane;
     $display->panels['middle'][0] = 'new-8f23e62a-b94a-4f7e-9bd7-2abf44c1ae25';
+  $display->hide_title = PANELS_TITLE_FIXED;
+  $display->title_pane = '0';
+  $handler->conf['display'] = $display;
+  $page->default_handlers[$handler->name] = $handler;
+  $handler = new stdClass();
+  $handler->disabled = FALSE; /* Edit this to true to make a default handler disabled initially */
+  $handler->api_version = 1;
+  $handler->name = 'page_ca_gallery_list_view_panel_context_2';
+  $handler->task = 'page';
+  $handler->subtask = 'ca_gallery_list_view';
+  $handler->handler = 'panel_context';
+  $handler->weight = 1;
+  $handler->conf = array(
+    'title' => 'CA Gallery: Flex Grid View',
+    'no_blocks' => 0,
+    'pipeline' => 'standard',
+    'css_id' => '',
+    'css' => '',
+    'contexts' => array(),
+    'relationships' => array(),
+    'body_classes_to_remove' => '',
+    'body_classes_to_add' => 'ca-gallery-flex ca-gallery-flex-template-1',
+    'access' => array(
+      'plugins' => array(
+        0 => array(
+          'name' => 'ca_gallery_list_template',
+          'settings' => array(
+            'ca_gallery_list_template' => 'ca_gallery_list_template_one_flex',
+          ),
+          'not' => FALSE,
+        ),
+      ),
+      'logic' => 'and',
+    ),
+  );
+  $display = new panels_display();
+  $display->layout = 'onecol';
+  $display->layout_settings = array();
+  $display->panel_settings = array(
+    'style_settings' => array(
+      'default' => NULL,
+      'middle' => NULL,
+    ),
+  );
+  $display->cache = array();
+  $display->title = '';
+  $display->uuid = '3201c771-4308-46a3-87af-38fd0c194f91';
+  $display->content = array();
+  $display->panels = array();
+    $pane = new stdClass();
+    $pane->pid = 'new-2839a846-ddf0-45d2-986e-8e23e386278d';
+    $pane->panel = 'middle';
+    $pane->type = 'views_panes';
+    $pane->subtype = 'ca_gallery_list-ca_gallery_flex_1';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array();
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $pane->uuid = '2839a846-ddf0-45d2-986e-8e23e386278d';
+    $display->content['new-2839a846-ddf0-45d2-986e-8e23e386278d'] = $pane;
+    $display->panels['middle'][0] = 'new-2839a846-ddf0-45d2-986e-8e23e386278d';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;

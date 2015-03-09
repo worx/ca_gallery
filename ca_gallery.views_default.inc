@@ -406,6 +406,19 @@ function ca_gallery_views_default_views() {
   $handler->display->display_options['pane_title'] = 'CA Gallery: Image List View Template One';
   $handler->display->display_options['pane_category']['name'] = 'CA List';
   $handler->display->display_options['pane_category']['weight'] = '0';
+
+  /* Display: CA Gallery: Image Flex View Template One */
+  $handler = $view->new_display('panel_pane', 'CA Gallery: Image Flex View Template One', 'ca_gallery_image_flex_1');
+  $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['row_plugin'] = 'fields';
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['pane_title'] = 'CA Gallery: Image Flex View Template One';
+  $handler->display->display_options['pane_category']['name'] = 'CA List';
+  $handler->display->display_options['pane_category']['weight'] = '0';
   $export['ca_gallery_image_list'] = $view;
 
   $view = new view();
@@ -532,6 +545,65 @@ function ca_gallery_views_default_views() {
   );
   $handler->display->display_options['filters']['type']['group'] = 0;
   $handler->display->display_options['pane_title'] = 'CA Gallery: Sub Gallery View List Template One';
+  $handler->display->display_options['pane_category']['name'] = 'CA List';
+  $handler->display->display_options['pane_category']['weight'] = '0';
+
+  /* Display: CA Gallery: Gallery Flex View Template One */
+  $handler = $view->new_display('panel_pane', 'CA Gallery: Gallery Flex View Template One', 'ca_gallery_flex_1');
+  $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['row_plugin'] = 'fields';
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['pane_title'] = 'CA Gallery: Gallery Flex View Template One';
+  $handler->display->display_options['pane_category']['name'] = 'CA List';
+  $handler->display->display_options['pane_category']['weight'] = '0';
+
+  /* Display: CA Gallery: Sub Gallery View Flex Template One */
+  $handler = $view->new_display('panel_pane', 'CA Gallery: Sub Gallery View Flex Template One', 'ca_gallery_sub_flex_1');
+  $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
+  $handler->display->display_options['defaults']['pager'] = FALSE;
+  $handler->display->display_options['pager']['type'] = 'full';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '4';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['pager']['options']['id'] = '0';
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['row_plugin'] = 'fields';
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['defaults']['empty'] = FALSE;
+  $handler->display->display_options['defaults']['arguments'] = FALSE;
+  /* Contextual filter: Content: Parent Gallery (field_ca_gallery_parent_gallery) */
+  $handler->display->display_options['arguments']['field_ca_gallery_parent_gallery_target_id']['id'] = 'field_ca_gallery_parent_gallery_target_id';
+  $handler->display->display_options['arguments']['field_ca_gallery_parent_gallery_target_id']['table'] = 'field_data_field_ca_gallery_parent_gallery';
+  $handler->display->display_options['arguments']['field_ca_gallery_parent_gallery_target_id']['field'] = 'field_ca_gallery_parent_gallery_target_id';
+  $handler->display->display_options['arguments']['field_ca_gallery_parent_gallery_target_id']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['field_ca_gallery_parent_gallery_target_id']['default_argument_type'] = 'node';
+  $handler->display->display_options['arguments']['field_ca_gallery_parent_gallery_target_id']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['field_ca_gallery_parent_gallery_target_id']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['field_ca_gallery_parent_gallery_target_id']['summary_options']['items_per_page'] = '25';
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 0;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'ca_gallery' => 'ca_gallery',
+  );
+  $handler->display->display_options['filters']['type']['group'] = 0;
+  $handler->display->display_options['pane_title'] = 'CA Gallery: Sub Gallery View Flex Template One';
   $handler->display->display_options['pane_category']['name'] = 'CA List';
   $handler->display->display_options['pane_category']['weight'] = '0';
   $export['ca_gallery_list'] = $view;

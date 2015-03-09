@@ -10,3 +10,14 @@
 .ca-gallery-list tr td, .ca-gallery-list tr th, .node-type-ca-gallery tr td,  .node-type-ca-gallery tr th {
   text-align: center;
 }
+
+/* Flex List */
+.ca-gallery-flex .view-content {
+  display: flex;
+  flex-flow: row wrap;
+}
+
+.ca-gallery-flex .views-row {
+  text-align: center;
+  width: 25%
+}

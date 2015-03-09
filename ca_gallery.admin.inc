@@ -31,6 +31,16 @@ function ca_gallery_settings_form() {
     '#required' => TRUE,
     '#description' => t('What would you like the panel title to be?'),
   );
+  $form['ca_gallery_list_template'] = array(
+    '#type' => 'select',
+    '#title' => t('Gallery\'s list template'),
+    '#options' => array(
+      'ca_gallery_list_template_one' => t('Template one'),
+      'ca_gallery_list_template_one_flex' => t('Template one Flex'),
+    ),
+    '#required' => TRUE,
+    '#default_value' => variable_get('ca_gallery_list_template', 'ca_gallery_list_template_one'),
+  );
     $form['ca_gallery_list_count'] = array(
     '#type' => 'textfield',
     '#title' => t('Number of galleries to display'),

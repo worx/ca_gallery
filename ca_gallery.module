@@ -66,3 +66,12 @@ function ca_gallery_views_pre_view(&$view, &$display_id, &$args) {
     $view->set_items_per_page(variable_get('ca_gallery_image_list_count', 16));
   }
 }
+
+/**
+* Implementation of hook_ctools_plugin_directory()
+*/
+function ca_gallery_ctools_plugin_directory($owner, $plugin_type) {
+  if ($owner == 'ctools') {
+    return 'plugins/' . $plugin_type;;
+  }
+}
