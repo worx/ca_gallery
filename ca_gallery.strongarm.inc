@@ -199,20 +199,6 @@ function ca_gallery_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'pathauto_node_ca_gallery_image_pattern';
-  $strongarm->value = 'gallery/[node:field_ca_gallery_image_parent]/[node:title]';
-  $export['pathauto_node_ca_gallery_image_pattern'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'pathauto_node_ca_gallery_pattern';
-  $strongarm->value = 'gallery/[node:field_ca_gallery_parent_gallery]/[node:title]';
-  $export['pathauto_node_ca_gallery_pattern'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
   $strongarm->name = 'save_continue_ca_gallery';
   $strongarm->value = 'Save and add fields';
   $export['save_continue_ca_gallery'] = $strongarm;
