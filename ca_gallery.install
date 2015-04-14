@@ -23,4 +23,11 @@ function ca_gallery_install() {
   variable_set('pathauto_node_ca_gallery_image_pattern', 'gallery/[node:field_ca_gallery_image_parent]/[node:title]');
 
   variable_set('pathauto_node_ca_gallery_pattern', 'gallery/[node:field_ca_gallery_parent_gallery]/[node:title]');
+
+  // Added the permission assign node weights for Gallery Admin.
+  user_role_change_permissions(198476701, 
+    array(
+      'assign node weights' => TRUE,
+    )
+  );
 }
