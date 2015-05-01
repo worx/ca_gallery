@@ -349,7 +349,8 @@ function ca_gallery_views_default_views() {
   $handler->display->display_options['fields']['field_gallery_image_g_image']['click_sort_column'] = 'fid';
   $handler->display->display_options['fields']['field_gallery_image_g_image']['type'] = 'colorbox';
   $handler->display->display_options['fields']['field_gallery_image_g_image']['settings'] = array(
-    'colorbox_node_style' => 'default',
+    'colorbox_node_style' => 'crop_default_landscape',
+    'colorbox_node_style_first' => '',
     'colorbox_image_style' => '',
     'colorbox_gallery' => 'field_page',
     'colorbox_gallery_custom' => '',
@@ -460,7 +461,7 @@ function ca_gallery_views_default_views() {
   $handler->display->display_options['fields']['field_ca_gallery_gallery_image']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_ca_gallery_gallery_image']['click_sort_column'] = 'fid';
   $handler->display->display_options['fields']['field_ca_gallery_gallery_image']['settings'] = array(
-    'image_style' => 'default',
+    'image_style' => 'crop_default_landscape',
     'image_link' => 'content',
   );
   /* Field: Content: Title */
