@@ -216,7 +216,7 @@ function ca_gallery_field_default_field_instances() {
         ),
         'manualcrop_styles_mode' => 'include',
         'manualcrop_thumblist' => 0,
-        'preview_image_style' => 'thumbnail',
+        'preview_image_style' => 'crop_default_landscape',
         'progress_indicator' => 'throbber',
       ),
       'type' => 'image_image',
