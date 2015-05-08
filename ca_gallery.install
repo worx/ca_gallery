@@ -27,7 +27,7 @@ function ca_gallery_install() {
   // Added the permission assign node weights for Gallery Admin.
   user_role_change_permissions(198476701, 
     array(
-      'assign node weights' => TRUE,
+      'assign node weight' => TRUE,
     )
   );
 }
