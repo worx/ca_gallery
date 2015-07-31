@@ -17,7 +17,7 @@ function ca_gallery_default_page_manager_handlers() {
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = 0;
+  $handler->weight = -28;
   $handler->conf = array(
     'title' => 'CA Gallery: Gallery Grid Image View',
     'no_blocks' => 0,
@@ -115,7 +115,7 @@ function ca_gallery_default_page_manager_handlers() {
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = 2;
+  $handler->weight = -27;
   $handler->conf = array(
     'title' => 'CA Gallery: Gallery Flex Image View',
     'no_blocks' => 0,
@@ -205,6 +205,216 @@ function ca_gallery_default_page_manager_handlers() {
   $display->title_pane = '0';
   $handler->conf['display'] = $display;
   $export['ca_gallery_node_view_panel_context_2'] = $handler;
+
+  $handler = new stdClass();
+  $handler->disabled = FALSE; /* Edit this to true to make a default handler disabled initially */
+  $handler->api_version = 1;
+  $handler->name = 'node_view__panel_context_791222a0-c0d2-48eb-a0ec-6d1df984d9c0';
+  $handler->task = 'node_view';
+  $handler->subtask = '';
+  $handler->handler = 'panel_context';
+  $handler->weight = -29;
+  $handler->conf = array(
+    'title' => 'Aurora Gallery: Gallery Flex Image View',
+    'no_blocks' => 0,
+    'pipeline' => 'standard',
+    'css_id' => '',
+    'css' => '',
+    'contexts' => array(),
+    'relationships' => array(),
+    'access' => array(
+      'plugins' => array(
+        0 => array(
+          'name' => 'node_type',
+          'settings' => array(
+            'type' => array(
+              'ca_gallery' => 'ca_gallery',
+            ),
+          ),
+          'context' => 'argument_entity_id:node_1',
+          'not' => FALSE,
+        ),
+        1 => array(
+          'name' => 'ca_gallery_list_template',
+          'settings' => array(
+            'ca_gallery_list_template' => 'ca_gallery_list_template_one_flex',
+          ),
+          'not' => FALSE,
+        ),
+        2 => array(
+          'name' => 'worx_aurora_base_settings',
+          'settings' => array(
+            'worx_aurora_base_enable' => 'worx_aurora_base_enabled',
+          ),
+          'not' => FALSE,
+        ),
+      ),
+      'logic' => 'and',
+    ),
+    'body_classes_to_remove' => '',
+    'body_classes_to_add' => 'ca-gallery-node ca-gallery-node-template-1',
+  );
+  $display = new panels_display();
+  $display->layout = 'worx_aurora';
+  $display->layout_settings = array();
+  $display->panel_settings = array(
+    'style_settings' => array(
+      'default' => NULL,
+      'middle' => NULL,
+    ),
+  );
+  $display->cache = array();
+  $display->title = '%node:title';
+  $display->uuid = 'b79b5e0b-473e-4112-a881-49ce57af4cec';
+  $display->content = array();
+  $display->panels = array();
+    $pane = new stdClass();
+    $pane->pid = 'new-ebfb6f00-0f69-4893-aeb2-ce260bb16cb2';
+    $pane->panel = 'first-first';
+    $pane->type = 'views_panes';
+    $pane->subtype = 'ca_gallery_list-ca_gallery_flex_1';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array();
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $pane->uuid = 'ebfb6f00-0f69-4893-aeb2-ce260bb16cb2';
+    $display->content['new-ebfb6f00-0f69-4893-aeb2-ce260bb16cb2'] = $pane;
+    $display->panels['first-first'][0] = 'new-ebfb6f00-0f69-4893-aeb2-ce260bb16cb2';
+    $pane = new stdClass();
+    $pane->pid = 'new-06cbd0e2-1b19-4f31-adf3-e129b2048b93';
+    $pane->panel = 'first-first';
+    $pane->type = 'views_panes';
+    $pane->subtype = 'ca_gallery_image_list-ca_gallery_image_flex_1';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array();
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 1;
+    $pane->locks = array();
+    $pane->uuid = '06cbd0e2-1b19-4f31-adf3-e129b2048b93';
+    $display->content['new-06cbd0e2-1b19-4f31-adf3-e129b2048b93'] = $pane;
+    $display->panels['first-first'][1] = 'new-06cbd0e2-1b19-4f31-adf3-e129b2048b93';
+  $display->hide_title = PANELS_TITLE_FIXED;
+  $display->title_pane = '0';
+  $handler->conf['display'] = $display;
+  $export['node_view__panel_context_791222a0-c0d2-48eb-a0ec-6d1df984d9c0'] = $handler;
+
+  $handler = new stdClass();
+  $handler->disabled = FALSE; /* Edit this to true to make a default handler disabled initially */
+  $handler->api_version = 1;
+  $handler->name = 'node_view__panel_context_ca8170b5-74b6-4db1-847e-c4a305ffe4b0';
+  $handler->task = 'node_view';
+  $handler->subtask = '';
+  $handler->handler = 'panel_context';
+  $handler->weight = -30;
+  $handler->conf = array(
+    'title' => 'Aurora Gallery: Gallery Grid Image View',
+    'no_blocks' => 0,
+    'pipeline' => 'standard',
+    'css_id' => '',
+    'css' => '',
+    'contexts' => array(),
+    'relationships' => array(),
+    'access' => array(
+      'plugins' => array(
+        0 => array(
+          'name' => 'node_type',
+          'settings' => array(
+            'type' => array(
+              'ca_gallery' => 'ca_gallery',
+            ),
+          ),
+          'context' => 'argument_entity_id:node_1',
+          'not' => FALSE,
+        ),
+        1 => array(
+          'name' => 'ca_gallery_list_template',
+          'settings' => array(
+            'ca_gallery_list_template' => 'ca_gallery_list_template_one',
+          ),
+          'not' => FALSE,
+        ),
+        2 => array(
+          'name' => 'worx_aurora_base_settings',
+          'settings' => array(
+            'worx_aurora_base_enable' => 'worx_aurora_base_enabled',
+          ),
+          'not' => FALSE,
+        ),
+      ),
+      'logic' => 'and',
+    ),
+    'body_classes_to_remove' => '',
+    'body_classes_to_add' => 'ca-gallery-node ca-gallery-node-template-1',
+  );
+  $display = new panels_display();
+  $display->layout = 'worx_aurora';
+  $display->layout_settings = array();
+  $display->panel_settings = array(
+    'style_settings' => array(
+      'default' => NULL,
+      'middle' => NULL,
+    ),
+  );
+  $display->cache = array();
+  $display->title = '%node:title';
+  $display->uuid = 'b79b5e0b-473e-4112-a881-49ce57af4cec';
+  $display->content = array();
+  $display->panels = array();
+    $pane = new stdClass();
+    $pane->pid = 'new-8fbadb11-242b-42d3-9a5b-2dc54dc8a39e';
+    $pane->panel = 'first-first';
+    $pane->type = 'views_panes';
+    $pane->subtype = 'ca_gallery_list-ca_gallery_sub_list_1';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array();
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $pane->uuid = '8fbadb11-242b-42d3-9a5b-2dc54dc8a39e';
+    $display->content['new-8fbadb11-242b-42d3-9a5b-2dc54dc8a39e'] = $pane;
+    $display->panels['first-first'][0] = 'new-8fbadb11-242b-42d3-9a5b-2dc54dc8a39e';
+    $pane = new stdClass();
+    $pane->pid = 'new-064ed749-b43c-4140-bc55-3fabd83f2ffd';
+    $pane->panel = 'first-first';
+    $pane->type = 'views_panes';
+    $pane->subtype = 'ca_gallery_image_list-ca_gallery_image_list_1';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array();
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 1;
+    $pane->locks = array();
+    $pane->uuid = '064ed749-b43c-4140-bc55-3fabd83f2ffd';
+    $display->content['new-064ed749-b43c-4140-bc55-3fabd83f2ffd'] = $pane;
+    $display->panels['first-first'][1] = 'new-064ed749-b43c-4140-bc55-3fabd83f2ffd';
+  $display->hide_title = PANELS_TITLE_FIXED;
+  $display->title_pane = '0';
+  $handler->conf['display'] = $display;
+  $export['node_view__panel_context_ca8170b5-74b6-4db1-847e-c4a305ffe4b0'] = $handler;
 
   return $export;
 }
