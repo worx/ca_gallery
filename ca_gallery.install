@@ -24,6 +24,9 @@ function ca_gallery_install() {
 
   variable_set('pathauto_node_ca_gallery_pattern', 'gallery/[node:field_ca_gallery_parent_gallery]/[node:title]');
 
+  // Get the worx_aurora_base_enable variable to default set if not already set.
+  variable_get('worx_aurora_base_enable', 'worx_aurora_base_disabled');
+
   // Added the permission assign node weights for Gallery Admin.
   user_role_change_permissions(198476701, 
     array(
@@ -31,3 +34,21 @@ function ca_gallery_install() {
     )
   );
 }
+
+/**
+ * Setting worx_aurora_base_enable default so that panels can work corretly when aura base feature is not enabled.
+ * Enable the taxonomy/term/%taxonomy_term page
+ * Set the assign node weights for Gallery Admin
+ */
+function ca_gallery_update_7000() {
+  // Get the worx_aurora_base_enable variable to default set if not already set.
+  variable_get('worx_aurora_base_enable', 'worx_aurora_base_disabled');
+
+  // Added the permission assign node weights for Gallery Admin.
+  user_role_change_permissions(198476701, 
+    array(
+      'assign node weight' => TRUE,
+    )
+  );
+}
+
