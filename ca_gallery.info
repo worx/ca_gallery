@@ -103,4 +103,3 @@ features[views_view][] = ca_gallery_list
 features[views_view][] = ca_gallery_sort
 features[weight][] = ca_gallery
 features[weight][] = ca_gallery_image
-features_exclude[dependencies][views] = views
