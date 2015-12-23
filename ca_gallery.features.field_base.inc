@@ -10,7 +10,7 @@
 function ca_gallery_field_default_field_bases() {
   $field_bases = array();
 
-  // Exported field_base: 'field_ca_gallery_gallery_image'
+  // Exported field_base: 'field_ca_gallery_gallery_image'.
   $field_bases['field_ca_gallery_gallery_image'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -32,7 +32,7 @@ function ca_gallery_field_default_field_bases() {
     'type' => 'image',
   );
 
-  // Exported field_base: 'field_ca_gallery_image_parent'
+  // Exported field_base: 'field_ca_gallery_image_parent'.
   $field_bases['field_ca_gallery_image_parent'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -66,7 +66,7 @@ function ca_gallery_field_default_field_bases() {
     'type' => 'entityreference',
   );
 
-  // Exported field_base: 'field_ca_gallery_parent_gallery'
+  // Exported field_base: 'field_ca_gallery_parent_gallery'.
   $field_bases['field_ca_gallery_parent_gallery'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -100,7 +100,7 @@ function ca_gallery_field_default_field_bases() {
     'type' => 'entityreference',
   );
 
-  // Exported field_base: 'field_gallery_image_g_image'
+  // Exported field_base: 'field_gallery_image_g_image'.
   $field_bases['field_gallery_image_g_image'] = array(
     'active' => 1,
     'cardinality' => 1,

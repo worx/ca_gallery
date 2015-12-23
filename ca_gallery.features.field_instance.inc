@@ -10,7 +10,7 @@
 function ca_gallery_field_default_field_instances() {
   $field_instances = array();
 
-  // Exported field_instance: 'node-ca_gallery-field_ca_gallery_gallery_image'
+  // Exported field_instance: 'node-ca_gallery-field_ca_gallery_gallery_image'.
   $field_instances['node-ca_gallery-field_ca_gallery_gallery_image'] = array(
     'bundle' => 'ca_gallery',
     'deleted' => 0,
@@ -59,14 +59,14 @@ function ca_gallery_field_default_field_instances() {
         'manualcrop_instant_crop' => 0,
         'manualcrop_instant_preview' => 1,
         'manualcrop_keyboard' => 1,
-        'manualcrop_maximize_default_crop_area' => 0,
+        'manualcrop_maximize_default_crop_area' => 1,
         'manualcrop_require_cropping' => array(),
         'manualcrop_styles_list' => array(
           'crop_default_landscape' => 'crop_default_landscape',
         ),
         'manualcrop_styles_mode' => 'include',
         'manualcrop_thumblist' => 0,
-        'preview_image_style' => 'crop_default_landscape',
+        'preview_image_style' => 'crop_default_landscape_preview',
         'progress_indicator' => 'throbber',
       ),
       'type' => 'image_image',
@@ -74,7 +74,7 @@ function ca_gallery_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-ca_gallery-field_ca_gallery_parent_gallery'
+  // Exported field_instance: 'node-ca_gallery-field_ca_gallery_parent_gallery'.
   $field_instances['node-ca_gallery-field_ca_gallery_parent_gallery'] = array(
     'bundle' => 'ca_gallery',
     'default_value' => NULL,
@@ -118,7 +118,7 @@ function ca_gallery_field_default_field_instances() {
   );
 
   // Exported field_instance:
-  // 'node-ca_gallery_image-field_ca_gallery_image_parent'
+  // 'node-ca_gallery_image-field_ca_gallery_image_parent'.
   $field_instances['node-ca_gallery_image-field_ca_gallery_image_parent'] = array(
     'bundle' => 'ca_gallery_image',
     'default_value' => NULL,
@@ -162,7 +162,7 @@ function ca_gallery_field_default_field_instances() {
   );
 
   // Exported field_instance:
-  // 'node-ca_gallery_image-field_gallery_image_g_image'
+  // 'node-ca_gallery_image-field_gallery_image_g_image'.
   $field_instances['node-ca_gallery_image-field_gallery_image_g_image'] = array(
     'bundle' => 'ca_gallery_image',
     'deleted' => 0,
@@ -211,14 +211,14 @@ function ca_gallery_field_default_field_instances() {
         'manualcrop_instant_crop' => 0,
         'manualcrop_instant_preview' => 1,
         'manualcrop_keyboard' => 1,
-        'manualcrop_maximize_default_crop_area' => 0,
+        'manualcrop_maximize_default_crop_area' => 1,
         'manualcrop_require_cropping' => array(),
         'manualcrop_styles_list' => array(
           'crop_default_landscape' => 'crop_default_landscape',
         ),
         'manualcrop_styles_mode' => 'include',
         'manualcrop_thumblist' => 0,
-        'preview_image_style' => 'crop_default_landscape',
+        'preview_image_style' => 'crop_default_landscape_preview',
         'progress_indicator' => 'throbber',
       ),
       'type' => 'image_image',
