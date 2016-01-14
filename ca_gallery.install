@@ -24,6 +24,10 @@ function ca_gallery_install() {
 
   variable_set('pathauto_node_ca_gallery_pattern', 'gallery/[node:field_ca_gallery_parent_gallery]/[node:title]');
 
+  variable_get('ca_gallery_list_template', 'ca_gallery_list_template_one');
+
+  variable_get('ca_gallery_display', 'ca_gallery_display_landscape');
+
   // Get the worx_aurora_base_enable variable to default set if not already set.
   variable_get('worx_aurora_base_enable', 'worx_aurora_base_disabled');
 
@@ -50,5 +54,12 @@ function ca_gallery_update_7000() {
       'assign node weight' => TRUE,
     )
   );
+}
+
+/**
+ * Updated to ensure the ca_gallery_display variable gets set.
+ */
+function ca_gallery_update_7001() {
+  variable_get('ca_gallery_display', 'ca_gallery_display_landscape');
 }
 

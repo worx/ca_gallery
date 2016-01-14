@@ -2029,7 +2029,7 @@ function ca_gallery_default_page_manager_pages() {
   $handler->handler = 'panel_context';
   $handler->weight = -30;
   $handler->conf = array(
-    'title' => 'Aurora  Gallery: List View',
+    'title' => 'Aurora  Gallery: List View Landscape',
     'no_blocks' => 0,
     'pipeline' => 'standard',
     'css_id' => '',
@@ -2037,7 +2037,7 @@ function ca_gallery_default_page_manager_pages() {
     'contexts' => array(),
     'relationships' => array(),
     'body_classes_to_remove' => '',
-    'body_classes_to_add' => 'ca-gallery-list ca-gallery-list-template-1',
+    'body_classes_to_add' => 'ca-gallery-list ca-gallery-list-template-1 ca-gallery-list-template-1-landscape',
     'access' => array(
       'plugins' => array(
         0 => array(
@@ -2051,6 +2051,13 @@ function ca_gallery_default_page_manager_pages() {
           'name' => 'worx_aurora_base_settings',
           'settings' => array(
             'worx_aurora_base_enable' => 'worx_aurora_base_enabled',
+          ),
+          'not' => FALSE,
+        ),
+        2 => array(
+          'name' => 'ca_gallery_display',
+          'settings' => array(
+            'ca_gallery_display' => 'ca_gallery_display_landscape',
           ),
           'not' => FALSE,
         ),
@@ -2102,9 +2109,9 @@ function ca_gallery_default_page_manager_pages() {
   $handler->task = 'page';
   $handler->subtask = 'ca_gallery_list_view';
   $handler->handler = 'panel_context';
-  $handler->weight = -29;
+  $handler->weight = -28;
   $handler->conf = array(
-    'title' => 'Aurora Gallery: Flex Grid View',
+    'title' => 'Aurora Gallery: Flex Grid View Landscape',
     'no_blocks' => 0,
     'pipeline' => 'standard',
     'css_id' => '',
@@ -2112,7 +2119,7 @@ function ca_gallery_default_page_manager_pages() {
     'contexts' => array(),
     'relationships' => array(),
     'body_classes_to_remove' => '',
-    'body_classes_to_add' => 'ca-gallery-flex ca-gallery-flex-template-1',
+    'body_classes_to_add' => 'ca-gallery-flex ca-gallery-flex-template-1 ca-gallery-flex-template-1-landscape',
     'access' => array(
       'plugins' => array(
         0 => array(
@@ -2177,9 +2184,9 @@ function ca_gallery_default_page_manager_pages() {
   $handler->task = 'page';
   $handler->subtask = 'ca_gallery_list_view';
   $handler->handler = 'panel_context';
-  $handler->weight = -28;
+  $handler->weight = -26;
   $handler->conf = array(
-    'title' => 'CA Gallery: Grid View',
+    'title' => 'CA Gallery: Grid View Landscape',
     'no_blocks' => 0,
     'pipeline' => 'standard',
     'css_id' => '',
@@ -2187,7 +2194,7 @@ function ca_gallery_default_page_manager_pages() {
     'contexts' => array(),
     'relationships' => array(),
     'body_classes_to_remove' => '',
-    'body_classes_to_add' => 'ca-gallery-list ca-gallery-list-template-1',
+    'body_classes_to_add' => 'ca-gallery-list ca-gallery-list-template-1 ca-gallery-list-template-1-landscape',
     'access' => array(
       'plugins' => array(
         0 => array(
@@ -2197,7 +2204,15 @@ function ca_gallery_default_page_manager_pages() {
           ),
           'not' => FALSE,
         ),
+        1 => array(
+          'name' => 'ca_gallery_display',
+          'settings' => array(
+            'ca_gallery_display' => 'ca_gallery_display_landscape',
+          ),
+          'not' => FALSE,
+        ),
       ),
+      'logic' => 'and',
     ),
   );
   $display = new panels_display();
@@ -2244,9 +2259,9 @@ function ca_gallery_default_page_manager_pages() {
   $handler->task = 'page';
   $handler->subtask = 'ca_gallery_list_view';
   $handler->handler = 'panel_context';
-  $handler->weight = -27;
+  $handler->weight = -24;
   $handler->conf = array(
-    'title' => 'CA Gallery: Flex Grid View',
+    'title' => 'CA Gallery: Flex Grid View Landscape',
     'no_blocks' => 0,
     'pipeline' => 'standard',
     'css_id' => '',
@@ -2254,13 +2269,20 @@ function ca_gallery_default_page_manager_pages() {
     'contexts' => array(),
     'relationships' => array(),
     'body_classes_to_remove' => '',
-    'body_classes_to_add' => 'ca-gallery-flex ca-gallery-flex-template-1',
+    'body_classes_to_add' => 'ca-gallery-flex ca-gallery-flex-template-1 ca-gallery-flex-template-1-landscape',
     'access' => array(
       'plugins' => array(
         0 => array(
           'name' => 'ca_gallery_list_template',
           'settings' => array(
             'ca_gallery_list_template' => 'ca_gallery_list_template_one_flex',
+          ),
+          'not' => FALSE,
+        ),
+        1 => array(
+          'name' => 'ca_gallery_display',
+          'settings' => array(
+            'ca_gallery_display' => 'ca_gallery_display_landscape',
           ),
           'not' => FALSE,
         ),
@@ -2301,6 +2323,533 @@ function ca_gallery_default_page_manager_pages() {
     $pane->uuid = '2839a846-ddf0-45d2-986e-8e23e386278d';
     $display->content['new-2839a846-ddf0-45d2-986e-8e23e386278d'] = $pane;
     $display->panels['middle'][0] = 'new-2839a846-ddf0-45d2-986e-8e23e386278d';
+  $display->hide_title = PANELS_TITLE_FIXED;
+  $display->title_pane = '0';
+  $handler->conf['display'] = $display;
+  $page->default_handlers[$handler->name] = $handler;
+  $handler = new stdClass();
+  $handler->disabled = FALSE; /* Edit this to true to make a default handler disabled initially */
+  $handler->api_version = 1;
+  $handler->name = 'page_ca_gallery_list_view__aurora-gallery-list-view-protrait';
+  $handler->task = 'page';
+  $handler->subtask = 'ca_gallery_list_view';
+  $handler->handler = 'panel_context';
+  $handler->weight = -29;
+  $handler->conf = array(
+    'title' => 'Aurora Gallery: List View Protrait',
+    'no_blocks' => 0,
+    'pipeline' => 'standard',
+    'css_id' => '',
+    'css' => '',
+    'contexts' => array(),
+    'relationships' => array(),
+    'body_classes_to_remove' => '',
+    'body_classes_to_add' => 'ca-gallery-list ca-gallery-list-template-1 ca-gallery-list-template-1-portrait',
+    'access' => array(
+      'plugins' => array(
+        0 => array(
+          'name' => 'ca_gallery_list_template',
+          'settings' => array(
+            'ca_gallery_list_template' => 'ca_gallery_list_template_one',
+          ),
+          'not' => FALSE,
+        ),
+        1 => array(
+          'name' => 'worx_aurora_base_settings',
+          'settings' => array(
+            'worx_aurora_base_enable' => 'worx_aurora_base_enabled',
+          ),
+          'not' => FALSE,
+        ),
+        2 => array(
+          'name' => 'ca_gallery_display',
+          'settings' => array(
+            'ca_gallery_display' => 'ca_gallery_display_portrait',
+          ),
+          'not' => FALSE,
+        ),
+      ),
+      'logic' => 'and',
+    ),
+    'name' => 'aurora-gallery-list-view-protrait',
+  );
+  $display = new panels_display();
+  $display->layout = 'worx_aurora';
+  $display->layout_settings = array();
+  $display->panel_settings = array(
+    'style_settings' => array(
+      'default' => NULL,
+      'middle' => NULL,
+      'first-first' => NULL,
+      'first-second' => NULL,
+      'first-third' => NULL,
+      'first-fourth' => NULL,
+      'first-fifth' => NULL,
+      'first-sixth' => NULL,
+      'second-first' => NULL,
+      'second-second' => NULL,
+      'second-third' => NULL,
+      'second-fourth' => NULL,
+      'second-fifth' => NULL,
+      'second-sixth' => NULL,
+      'third-first' => NULL,
+      'third-second' => NULL,
+      'third-third' => NULL,
+      'third-fourth' => NULL,
+      'third-fifth' => NULL,
+      'third-sixth' => NULL,
+      'fourth-first' => NULL,
+      'fourth-second' => NULL,
+      'fourth-third' => NULL,
+      'fourth-fourth' => NULL,
+      'fourth-fifth' => NULL,
+      'fourth-sixth' => NULL,
+      'fifth-first' => NULL,
+      'fifth-second' => NULL,
+      'fifth-third' => NULL,
+      'fifth-fourth' => NULL,
+      'fifth-fifth' => NULL,
+      'fifth-sixth' => NULL,
+      'sixth-first' => NULL,
+      'sixth-second' => NULL,
+      'sixth-third' => NULL,
+      'sixth-fourth' => NULL,
+      'sixth-fifth' => NULL,
+      'sixth-sixth' => NULL,
+      'seventh-first' => NULL,
+      'seventh-second' => NULL,
+      'seventh-third' => NULL,
+      'seventh-fourth' => NULL,
+      'seventh-fifth' => NULL,
+      'seventh-sixth' => NULL,
+      'eighth-first' => NULL,
+      'eighth-second' => NULL,
+      'eighth-third' => NULL,
+      'eighth-fourth' => NULL,
+      'eighth-fifth' => NULL,
+      'eighth-sixth' => NULL,
+      'ninth-first' => NULL,
+      'ninth-second' => NULL,
+      'ninth-third' => NULL,
+      'ninth-fourth' => NULL,
+      'ninth-fifth' => NULL,
+      'ninth-sixth' => NULL,
+      'tenth-first' => NULL,
+      'tenth-second' => NULL,
+      'tenth-third' => NULL,
+      'tenth-fourth' => NULL,
+      'tenth-fifth' => NULL,
+      'tenth-sixth' => NULL,
+      'eleventh-first' => NULL,
+      'eleventh-second' => NULL,
+      'eleventh-third' => NULL,
+      'eleventh-fourth' => NULL,
+      'eleventh-fifth' => NULL,
+      'eleventh-sixth' => NULL,
+      'twelfth-first' => NULL,
+      'twelfth-second' => NULL,
+      'twelfth-third' => NULL,
+      'twelfth-fourth' => NULL,
+      'twelfth-fifth' => NULL,
+      'twelfth-sixth' => NULL,
+      'thirteenth-first' => NULL,
+      'thirteenth-second' => NULL,
+      'thirteenth-third' => NULL,
+      'thirteenth-fourth' => NULL,
+      'thirteenth-fifth' => NULL,
+      'thirteenth-sixth' => NULL,
+      'fourteenth-first' => NULL,
+      'fourteenth-second' => NULL,
+      'fourteenth-third' => NULL,
+      'fourteenth-fourth' => NULL,
+      'fourteenth-fifth' => NULL,
+      'fourteenth-sixth' => NULL,
+      'fifteenth-first' => NULL,
+      'fifteenth-second' => NULL,
+      'fifteenth-third' => NULL,
+      'fifteenth-fourth' => NULL,
+      'fifteenth-fifth' => NULL,
+      'fifteenth-sixth' => NULL,
+      'sixteenth-first' => NULL,
+      'sixteenth-second' => NULL,
+      'sixteenth-third' => NULL,
+      'sixteenth-fourth' => NULL,
+      'sixteenth-fifth' => NULL,
+      'sixteenth-sixth' => NULL,
+    ),
+  );
+  $display->cache = array();
+  $display->title = '';
+  $display->uuid = '3201c771-4308-46a3-87af-38fd0c194f91';
+  $display->content = array();
+  $display->panels = array();
+    $pane = new stdClass();
+    $pane->pid = 'new-e73edfa6-82b1-4472-9154-ab1e1d179617';
+    $pane->panel = 'first-first';
+    $pane->type = 'views_panes';
+    $pane->subtype = 'ca_gallery_list-ca_gallery_list_1_portrait';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array();
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $pane->uuid = 'e73edfa6-82b1-4472-9154-ab1e1d179617';
+    $display->content['new-e73edfa6-82b1-4472-9154-ab1e1d179617'] = $pane;
+    $display->panels['first-first'][0] = 'new-e73edfa6-82b1-4472-9154-ab1e1d179617';
+  $display->hide_title = PANELS_TITLE_FIXED;
+  $display->title_pane = '0';
+  $handler->conf['display'] = $display;
+  $page->default_handlers[$handler->name] = $handler;
+  $handler = new stdClass();
+  $handler->disabled = FALSE; /* Edit this to true to make a default handler disabled initially */
+  $handler->api_version = 1;
+  $handler->name = 'page_ca_gallery_list_view__aurora-gallery-flex-grid-view-portrait';
+  $handler->task = 'page';
+  $handler->subtask = 'ca_gallery_list_view';
+  $handler->handler = 'panel_context';
+  $handler->weight = -27;
+  $handler->conf = array(
+    'title' => 'Aurora Gallery: Flex Grid View Portrait',
+    'no_blocks' => 0,
+    'pipeline' => 'standard',
+    'css_id' => '',
+    'css' => '',
+    'contexts' => array(),
+    'relationships' => array(),
+    'body_classes_to_remove' => '',
+    'body_classes_to_add' => 'ca-gallery-flex ca-gallery-flex-template-1 ca-gallery-flex-template-1-portrait',
+    'access' => array(
+      'plugins' => array(
+        0 => array(
+          'name' => 'ca_gallery_list_template',
+          'settings' => array(
+            'ca_gallery_list_template' => 'ca_gallery_list_template_one_flex',
+          ),
+          'not' => FALSE,
+        ),
+        1 => array(
+          'name' => 'worx_aurora_base_settings',
+          'settings' => array(
+            'worx_aurora_base_enable' => 'worx_aurora_base_enabled',
+          ),
+          'not' => FALSE,
+        ),
+        2 => array(
+          'name' => 'ca_gallery_display',
+          'settings' => array(
+            'ca_gallery_display' => 'ca_gallery_display_portrait',
+          ),
+          'not' => FALSE,
+        ),
+      ),
+      'logic' => 'and',
+    ),
+    'name' => 'aurora-gallery-flex-grid-view-portrait',
+  );
+  $display = new panels_display();
+  $display->layout = 'worx_aurora';
+  $display->layout_settings = array();
+  $display->panel_settings = array(
+    'style_settings' => array(
+      'default' => NULL,
+      'middle' => NULL,
+      'first-first' => NULL,
+      'first-second' => NULL,
+      'first-third' => NULL,
+      'first-fourth' => NULL,
+      'first-fifth' => NULL,
+      'first-sixth' => NULL,
+      'second-first' => NULL,
+      'second-second' => NULL,
+      'second-third' => NULL,
+      'second-fourth' => NULL,
+      'second-fifth' => NULL,
+      'second-sixth' => NULL,
+      'third-first' => NULL,
+      'third-second' => NULL,
+      'third-third' => NULL,
+      'third-fourth' => NULL,
+      'third-fifth' => NULL,
+      'third-sixth' => NULL,
+      'fourth-first' => NULL,
+      'fourth-second' => NULL,
+      'fourth-third' => NULL,
+      'fourth-fourth' => NULL,
+      'fourth-fifth' => NULL,
+      'fourth-sixth' => NULL,
+      'fifth-first' => NULL,
+      'fifth-second' => NULL,
+      'fifth-third' => NULL,
+      'fifth-fourth' => NULL,
+      'fifth-fifth' => NULL,
+      'fifth-sixth' => NULL,
+      'sixth-first' => NULL,
+      'sixth-second' => NULL,
+      'sixth-third' => NULL,
+      'sixth-fourth' => NULL,
+      'sixth-fifth' => NULL,
+      'sixth-sixth' => NULL,
+      'seventh-first' => NULL,
+      'seventh-second' => NULL,
+      'seventh-third' => NULL,
+      'seventh-fourth' => NULL,
+      'seventh-fifth' => NULL,
+      'seventh-sixth' => NULL,
+      'eighth-first' => NULL,
+      'eighth-second' => NULL,
+      'eighth-third' => NULL,
+      'eighth-fourth' => NULL,
+      'eighth-fifth' => NULL,
+      'eighth-sixth' => NULL,
+      'ninth-first' => NULL,
+      'ninth-second' => NULL,
+      'ninth-third' => NULL,
+      'ninth-fourth' => NULL,
+      'ninth-fifth' => NULL,
+      'ninth-sixth' => NULL,
+      'tenth-first' => NULL,
+      'tenth-second' => NULL,
+      'tenth-third' => NULL,
+      'tenth-fourth' => NULL,
+      'tenth-fifth' => NULL,
+      'tenth-sixth' => NULL,
+      'eleventh-first' => NULL,
+      'eleventh-second' => NULL,
+      'eleventh-third' => NULL,
+      'eleventh-fourth' => NULL,
+      'eleventh-fifth' => NULL,
+      'eleventh-sixth' => NULL,
+      'twelfth-first' => NULL,
+      'twelfth-second' => NULL,
+      'twelfth-third' => NULL,
+      'twelfth-fourth' => NULL,
+      'twelfth-fifth' => NULL,
+      'twelfth-sixth' => NULL,
+      'thirteenth-first' => NULL,
+      'thirteenth-second' => NULL,
+      'thirteenth-third' => NULL,
+      'thirteenth-fourth' => NULL,
+      'thirteenth-fifth' => NULL,
+      'thirteenth-sixth' => NULL,
+      'fourteenth-first' => NULL,
+      'fourteenth-second' => NULL,
+      'fourteenth-third' => NULL,
+      'fourteenth-fourth' => NULL,
+      'fourteenth-fifth' => NULL,
+      'fourteenth-sixth' => NULL,
+      'fifteenth-first' => NULL,
+      'fifteenth-second' => NULL,
+      'fifteenth-third' => NULL,
+      'fifteenth-fourth' => NULL,
+      'fifteenth-fifth' => NULL,
+      'fifteenth-sixth' => NULL,
+      'sixteenth-first' => NULL,
+      'sixteenth-second' => NULL,
+      'sixteenth-third' => NULL,
+      'sixteenth-fourth' => NULL,
+      'sixteenth-fifth' => NULL,
+      'sixteenth-sixth' => NULL,
+    ),
+  );
+  $display->cache = array();
+  $display->title = '';
+  $display->uuid = '3201c771-4308-46a3-87af-38fd0c194f91';
+  $display->content = array();
+  $display->panels = array();
+    $pane = new stdClass();
+    $pane->pid = 'new-68bbcf8c-818a-4072-8f94-f2f8357a46ca';
+    $pane->panel = 'first-first';
+    $pane->type = 'views_panes';
+    $pane->subtype = 'ca_gallery_list-ca_gallery_flex_1_portrait';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array();
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $pane->uuid = '68bbcf8c-818a-4072-8f94-f2f8357a46ca';
+    $display->content['new-68bbcf8c-818a-4072-8f94-f2f8357a46ca'] = $pane;
+    $display->panels['first-first'][0] = 'new-68bbcf8c-818a-4072-8f94-f2f8357a46ca';
+  $display->hide_title = PANELS_TITLE_FIXED;
+  $display->title_pane = '0';
+  $handler->conf['display'] = $display;
+  $page->default_handlers[$handler->name] = $handler;
+  $handler = new stdClass();
+  $handler->disabled = FALSE; /* Edit this to true to make a default handler disabled initially */
+  $handler->api_version = 1;
+  $handler->name = 'page_ca_gallery_list_view__ca-gallery-grid-view-portrait';
+  $handler->task = 'page';
+  $handler->subtask = 'ca_gallery_list_view';
+  $handler->handler = 'panel_context';
+  $handler->weight = -25;
+  $handler->conf = array(
+    'title' => 'CA Gallery: Grid View Portrait',
+    'no_blocks' => 0,
+    'pipeline' => 'standard',
+    'css_id' => '',
+    'css' => '',
+    'contexts' => array(),
+    'relationships' => array(),
+    'body_classes_to_remove' => '',
+    'body_classes_to_add' => 'ca-gallery-list ca-gallery-list-template-1 ca-gallery-list-template-1-portrait',
+    'access' => array(
+      'plugins' => array(
+        0 => array(
+          'name' => 'ca_gallery_list_template',
+          'settings' => array(
+            'ca_gallery_list_template' => 'ca_gallery_list_template_one',
+          ),
+          'not' => FALSE,
+        ),
+        1 => array(
+          'name' => 'ca_gallery_display',
+          'settings' => array(
+            'ca_gallery_display' => 'ca_gallery_display_portrait',
+          ),
+          'not' => FALSE,
+        ),
+      ),
+      'logic' => 'and',
+    ),
+    'name' => 'ca-gallery-grid-view-portrait',
+  );
+  $display = new panels_display();
+  $display->layout = 'onecol';
+  $display->layout_settings = array();
+  $display->panel_settings = array(
+    'style_settings' => array(
+      'default' => NULL,
+      'middle' => NULL,
+    ),
+  );
+  $display->cache = array();
+  $display->title = '';
+  $display->uuid = '3201c771-4308-46a3-87af-38fd0c194f91';
+  $display->content = array();
+  $display->panels = array();
+    $pane = new stdClass();
+    $pane->pid = 'new-8f23e62a-b94a-4f7e-9bd7-2abf44c1ae25';
+    $pane->panel = 'middle';
+    $pane->type = 'views_panes';
+    $pane->subtype = 'ca_gallery_list-ca_gallery_list_1';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array();
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $pane->uuid = '8f23e62a-b94a-4f7e-9bd7-2abf44c1ae25';
+    $display->content['new-8f23e62a-b94a-4f7e-9bd7-2abf44c1ae25'] = $pane;
+    $display->panels['middle'][0] = 'new-8f23e62a-b94a-4f7e-9bd7-2abf44c1ae25';
+    $pane = new stdClass();
+    $pane->pid = 'new-6d588f13-13e0-42ea-924b-8fdb97e01597';
+    $pane->panel = 'middle';
+    $pane->type = 'views_panes';
+    $pane->subtype = 'ca_gallery_list-ca_gallery_list_1_portrait';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array();
+    $pane->cache = array();
+    $pane->style = array();
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 1;
+    $pane->locks = array();
+    $pane->uuid = '6d588f13-13e0-42ea-924b-8fdb97e01597';
+    $display->content['new-6d588f13-13e0-42ea-924b-8fdb97e01597'] = $pane;
+    $display->panels['middle'][1] = 'new-6d588f13-13e0-42ea-924b-8fdb97e01597';
+  $display->hide_title = PANELS_TITLE_FIXED;
+  $display->title_pane = '0';
+  $handler->conf['display'] = $display;
+  $page->default_handlers[$handler->name] = $handler;
+  $handler = new stdClass();
+  $handler->disabled = FALSE; /* Edit this to true to make a default handler disabled initially */
+  $handler->api_version = 1;
+  $handler->name = 'page_ca_gallery_list_view__ca-gallery-flex-grid-view-portrait';
+  $handler->task = 'page';
+  $handler->subtask = 'ca_gallery_list_view';
+  $handler->handler = 'panel_context';
+  $handler->weight = -23;
+  $handler->conf = array(
+    'title' => 'CA Gallery: Flex Grid View Portrait',
+    'no_blocks' => 0,
+    'pipeline' => 'standard',
+    'css_id' => '',
+    'css' => '',
+    'contexts' => array(),
+    'relationships' => array(),
+    'body_classes_to_remove' => '',
+    'body_classes_to_add' => 'ca-gallery-flex ca-gallery-flex-template-1 ca-gallery-flex-template-1-portrait',
+    'access' => array(
+      'plugins' => array(
+        0 => array(
+          'name' => 'ca_gallery_list_template',
+          'settings' => array(
+            'ca_gallery_list_template' => 'ca_gallery_list_template_one_flex',
+          ),
+          'not' => FALSE,
+        ),
+        1 => array(
+          'name' => 'ca_gallery_display',
+          'settings' => array(
+            'ca_gallery_display' => 'ca_gallery_display_portrait',
+          ),
+          'not' => FALSE,
+        ),
+      ),
+      'logic' => 'and',
+    ),
+    'name' => 'ca-gallery-flex-grid-view-portrait',
+  );
+  $display = new panels_display();
+  $display->layout = 'onecol';
+  $display->layout_settings = array();
+  $display->panel_settings = array(
+    'style_settings' => array(
+      'default' => NULL,
+      'middle' => NULL,
+    ),
+  );
+  $display->cache = array();
+  $display->title = '';
+  $display->uuid = '3201c771-4308-46a3-87af-38fd0c194f91';
+  $display->content = array();
+  $display->panels = array();
+    $pane = new stdClass();
+    $pane->pid = 'new-544f38c3-8302-4ef2-b65a-01349529c120';
+    $pane->panel = 'middle';
+    $pane->type = 'views_panes';
+    $pane->subtype = 'ca_gallery_list-ca_gallery_flex_1_portrait';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array();
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $pane->uuid = '544f38c3-8302-4ef2-b65a-01349529c120';
+    $display->content['new-544f38c3-8302-4ef2-b65a-01349529c120'] = $pane;
+    $display->panels['middle'][0] = 'new-544f38c3-8302-4ef2-b65a-01349529c120';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;
