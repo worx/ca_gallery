@@ -31,10 +31,54 @@ function ca_gallery_install() {
   // Get the worx_aurora_base_enable variable to default set if not already set.
   variable_get('worx_aurora_base_enable', 'worx_aurora_base_disabled');
 
-  // Added the permission assign node weights for Gallery Admin.
+  // Set the permissions for Gallery Admin.
   user_role_change_permissions(198476701, 
     array(
       'assign node weight' => TRUE,
+      'create ca_gallery content' => TRUE,
+      'create ca_gallery_image content' => TRUE,
+      'delete any ca_gallery content' => TRUE,
+      'delete any ca_gallery_image content' => TRUE,
+      'delete own ca_gallery content' => TRUE,
+      'delete own ca_gallery_image content' => TRUE,
+      'edit any ca_gallery content' => TRUE,
+      'edit any ca_gallery_image content' => TRUE,
+      'edit own ca_gallery content' => TRUE,
+      'edit own ca_gallery_image content' => TRUE,
+    )
+  );
+
+  // Set the permissions for Administrator
+  user_role_change_permissions(3, 
+    array(
+      'assign node weight' => TRUE,
+      'create ca_gallery content' => TRUE,
+      'create ca_gallery_image content' => TRUE,
+      'delete any ca_gallery content' => TRUE,
+      'delete any ca_gallery_image content' => TRUE,
+      'delete own ca_gallery content' => TRUE,
+      'delete own ca_gallery_image content' => TRUE,
+      'edit any ca_gallery content' => TRUE,
+      'edit any ca_gallery_image content' => TRUE,
+      'edit own ca_gallery content' => TRUE,
+      'edit own ca_gallery_image content' => TRUE,
+    )
+  );
+
+  // Set the permissions for Webmaster
+  user_role_change_permissions(4, 
+    array(
+      'assign node weight' => TRUE,
+      'create ca_gallery content' => TRUE,
+      'create ca_gallery_image content' => TRUE,
+      'delete any ca_gallery content' => TRUE,
+      'delete any ca_gallery_image content' => TRUE,
+      'delete own ca_gallery content' => TRUE,
+      'delete own ca_gallery_image content' => TRUE,
+      'edit any ca_gallery content' => TRUE,
+      'edit any ca_gallery_image content' => TRUE,
+      'edit own ca_gallery content' => TRUE,
+      'edit own ca_gallery_image content' => TRUE,
     )
   );
 }
@@ -63,3 +107,58 @@ function ca_gallery_update_7001() {
   variable_get('ca_gallery_display', 'ca_gallery_display_landscape');
 }
 
+/**
+ * Set the permissions for Gallery Admin, Webmaster and Administrator as a one time event rather than handled with features to allow additonal roles to be 
+ * given these permissions without overridding the feature.
+ */
+function ca_gallery_update_7002() {
+  // Set the permissions for Gallery Admin.
+  user_role_change_permissions(198476701, 
+    array(
+      'create ca_gallery content' => TRUE,
+      'create ca_gallery_image content' => TRUE,
+      'delete any ca_gallery content' => TRUE,
+      'delete any ca_gallery_image content' => TRUE,
+      'delete own ca_gallery content' => TRUE,
+      'delete own ca_gallery_image content' => TRUE,
+      'edit any ca_gallery content' => TRUE,
+      'edit any ca_gallery_image content' => TRUE,
+      'edit own ca_gallery content' => TRUE,
+      'edit own ca_gallery_image content' => TRUE,
+    )
+  );
+
+  // Set the permissions for Administrator
+  user_role_change_permissions(3, 
+    array(
+      'assign node weight' => TRUE,
+      'create ca_gallery content' => TRUE,
+      'create ca_gallery_image content' => TRUE,
+      'delete any ca_gallery content' => TRUE,
+      'delete any ca_gallery_image content' => TRUE,
+      'delete own ca_gallery content' => TRUE,
+      'delete own ca_gallery_image content' => TRUE,
+      'edit any ca_gallery content' => TRUE,
+      'edit any ca_gallery_image content' => TRUE,
+      'edit own ca_gallery content' => TRUE,
+      'edit own ca_gallery_image content' => TRUE,
+    )
+  );
+
+  // Set the permissions for Webmaster
+  user_role_change_permissions(4, 
+    array(
+      'assign node weight' => TRUE,
+      'create ca_gallery content' => TRUE,
+      'create ca_gallery_image content' => TRUE,
+      'delete any ca_gallery content' => TRUE,
+      'delete any ca_gallery_image content' => TRUE,
+      'delete own ca_gallery content' => TRUE,
+      'delete own ca_gallery_image content' => TRUE,
+      'edit any ca_gallery content' => TRUE,
+      'edit any ca_gallery_image content' => TRUE,
+      'edit own ca_gallery content' => TRUE,
+      'edit own ca_gallery_image content' => TRUE,
+    )
+  );
+}
