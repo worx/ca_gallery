@@ -75,3 +75,77 @@ function ca_gallery_ctools_plugin_directory($owner, $plugin_type) {
     return 'plugins/' . $plugin_type;
   }
 }
+
+/**
+ * Implements hook_token_info().
+ */
+function ca_gallery_token_info() {
+  
+  // Define token value, gallery_category_hierarchy is the token will be used as [node:gallery_category_hierarchy]
+  $data['tokens']['node']['gallery_category_hierarchy'] = array(
+    'name' => t("Gallery category hierarchy"),
+    'description' => t("Hierachy path of the category"),
+  );
+  
+  // Define token value, gallery_image_path is the token will be used as [node:gallery_image_path]
+  $data['tokens']['node']['gallery_image_path'] = array(
+    'name' => t("Gallery category path"),
+    'description' => t("The path of the category the image is located at"),
+  );
+  
+  // Return associative array of tokens & token types
+  return $data;
+}
+
+/**
+ * Implements hook_tokens().
+ */
+function ca_gallery_tokens($type, $tokens, array $data = array(), array $options = array()) {
+  $replacements = array();
+
+  // Check if token type is node
+  if($type == 'node'){
+    foreach ($tokens as $name => $original) {
+      switch ($name) {
+        // Check token is gallery_category_hierarchy
+        case 'gallery_category_hierarchy':
+          $cateparent =  $data['node']->field_ca_gallery_parent_gallery;
+          //print_r($data['node']);
+          $search  = array(' w/', '/');
+          $replace = array(' ', '-');
+          if ($cateparent[LANGUAGE_NONE] != NULL) {
+            $x = $cateparent[LANGUAGE_NONE][0]['target_id'];
+            while ($x > 0) {
+              $node = node_load($x);
+              $nodetitlefix = str_replace($search, $replace, $node->title);
+              if (isset($replacements[$original])) {
+                $replacements[$original] = $nodetitlefix . '/' . $replacements[$original];
+              } else {
+                $replacements[$original] = $nodetitlefix;
+              }
+              //print_r('Category Path ' . $replacements[$original]);
+              $cateparent =  $node->field_ca_gallery_parent_gallery;
+              //print_r('Category Parent ' . $cateparent);
+              if ($cateparent != NULL) {
+                $x = $cateparent[LANGUAGE_NONE][0]['target_id'];
+              } else {
+                break;
+              }
+            }
+          }
+          //print_r('Category Path ' . $replacements[$original]);
+          break;
+        // Check token is gallery_image_path
+        case 'gallery_image_path':
+          $category =  $data['node']->field_ca_gallery_image_parent[LANGUAGE_NONE][0]['target_id'];
+          //print_r($data['node']);
+          $nodepath = 'node/' . $category;
+          $path = drupal_get_path_alias($nodepath);
+          //print_r($path);
+          $replacements[$original] = $path;
+          break;
+      }
+    }
+  }
+  return $replacements;
+}

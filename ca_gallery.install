@@ -20,9 +20,11 @@ function ca_gallery_install() {
   variable_set('imce_roles_profiles', $imce_roles_profiles);
 
   // Set the Pathauto for the node.
-  variable_set('pathauto_node_ca_gallery_image_pattern', 'gallery/[node:field_ca_gallery_image_parent]/[node:title]');
+  variable_set('pathauto_node_ca_gallery_pattern', 'gallery/[node:gallery_category_hierarchy]/[node:worx_title]');
 
-  variable_set('pathauto_node_ca_gallery_pattern', 'gallery/[node:field_ca_gallery_parent_gallery]/[node:title]');
+  variable_set('pathauto_node_ca_gallery_image_pattern', '[node:gallery_image_path]/[node:worx_title]');
+  
+  variable_set('pathauto_punctuation_slash', '2');
 
   variable_get('ca_gallery_list_template', 'ca_gallery_list_template_one');
 
@@ -94,4 +96,30 @@ function ca_gallery_update_7002() {
       'assign node weight' => TRUE,
     )
   );
+}
+
+/**
+ * Set the assign node weights for Webmaster and Administrator.
+ */
+function ca_gallery_update_7003() {
+  $setslash = FALSE;
+
+  $catpath = variable_get('pathauto_node_ca_gallery_pattern', '');
+  if ($catpath == 'gallery/[node:field_ca_gallery_parent_gallery]/[node:title]' || $catpath == '') {
+    variable_set('pathauto_node_ca_gallery_pattern', 'gallery/[node:gallery_category_hierarchy]/[node:worx_title]');
+
+    $setslash = TRUE;
+  }
+
+  $imgpath = variable_get('pathauto_node_ca_gallery_image_pattern', '');
+  if ($imgpath == 'gallery/[node:field_ca_gallery_image_parent]/[node:title]' || $imgpath == '') {
+    variable_set('pathauto_node_ca_gallery_image_pattern', '[node:gallery_image_path]/[node:worx_title]');
+
+    $setslash = TRUE;
+  }
+  
+  if ($setslash === TRUE) {
+    // Set the Pathauto Slash setting to do not remove because of the hierarchy fix to product.
+    variable_set('pathauto_punctuation_slash', '2');
+  }
 }
