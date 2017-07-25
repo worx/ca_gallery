@@ -149,7 +149,7 @@ function ca_gallery_default_page_manager_handlers() {
       'logic' => 'and',
     ),
     'body_classes_to_remove' => '',
-    'body_classes_to_add' => 'ca-gallery-node ca-gallery-node-template-1',
+    'body_classes_to_add' => 'ca-gallery-node-flex ca-gallery-node-template-1-flex',
   );
   $display = new panels_display();
   $display->layout = 'onecol';
@@ -256,7 +256,7 @@ function ca_gallery_default_page_manager_handlers() {
       'logic' => 'and',
     ),
     'body_classes_to_remove' => '',
-    'body_classes_to_add' => 'ca-gallery-node ca-gallery-node-template-1',
+    'body_classes_to_add' => 'ca-gallery-node-flex ca-gallery-node-template-1-flex',
   );
   $display = new panels_display();
   $display->layout = 'worx_aurora';

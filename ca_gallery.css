@@ -12,12 +12,14 @@
 }
 
 /* Flex List */
-.ca-gallery-flex .view-content {
+.ca-gallery-flex .view-content,
+.ca-gallery-node-flex .view-content {
   display: flex;
   flex-flow: row wrap;
 }
 
-.ca-gallery-flex .views-row {
+.ca-gallery-flex .views-row,
+.ca-gallery-node-flex .views-row {
   text-align: center;
   width: 25%
 }
