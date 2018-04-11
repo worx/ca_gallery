@@ -39,7 +39,7 @@ function ca_gallery_settings_form() {
       'ca_gallery_list_template_one_flex' => t('Template one Flex'),
     ),
     '#required' => TRUE,
-    '#default_value' => variable_get('ca_gallery_list_template', 'ca_gallery_list_template_one'),
+    '#default_value' => variable_get('ca_gallery_list_template', 'ca_gallery_list_template_one_flex'),
   );
     $form['ca_gallery_list_count'] = array(
     '#type' => 'textfield',
