@@ -12,14 +12,16 @@
 }
 
 /* Flex List */
-.ca-gallery-flex .view-content,
-.ca-gallery-node-flex .view-content {
-  display: flex;
-  flex-flow: row wrap;
-}
-
 .ca-gallery-flex .views-row,
 .ca-gallery-node-flex .views-row {
   text-align: center;
   flex: 0 1 25%;
+}
+
+@media only screen and (min-width: 641px) {
+  .ca-gallery-flex .view-content,
+  .ca-gallery-node-flex .view-content {
+    display: flex;
+    flex-flow: row wrap;
+  }
 }
